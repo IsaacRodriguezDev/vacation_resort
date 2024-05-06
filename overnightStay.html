@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overnight stay</title>
+</head>
+<body>
+<header>
+    <h1>Get a hotel room</h1>
+</header>
+<section>
+    <form id="onForm">
+        <!-- Name and email input -->
+        <div>
+            <label for="name"> Please Enter your name:</label>
+            <input type="text" id="name"><br>
+            <label for="email"> Please Enter your email:</label>
+            <input type="email" id="email">
+        </div>
+        <!-- date input -->
+        <div>
+            <label for="checkInDate">Select a check in date:</label>
+            <input type="date" name="checkInDate" id="checkInDate" required>
+        </div>
+        <!-- how many nights  -->
+        <div>
+            <h3>How many nights</h3>
+            <label for="numberOfNights">Enter number of nights:</label>
+            <input type="number" name="numberOfNights" id="numberOfNights" min="1" max="28" required >
+        </div>
+        <!-- room types -->
+        <div>
+            <h3>Room type</h3>
+            <label for="queenBed">Queen</label>
+            <input type="radio" name="roomType" id="queenBed" checked >
+            <label for="kingBed">King</label>
+            <input type="radio" name="roomType" id="kingBed">
+            <label for="twoBedroom">2-Bedroom Suite</label>
+            <input type="radio" name="roomType" id="twoBedroom">
+        </div>
+        <!-- number of guests -->
+        <div>
+            <h3>Number of guests</h3>
+            <label for="numberOfAdults">Number of adults:</label>
+            <input type="number" name="numberOfGuests" id="numberOfAdults" min="1" max="4" required>
+            <label for="numberOfChildren">Number of children:</label>
+            <input type="number" name="numberOfGuests" id="numberOfChildren" min="0" max="4" required>
+        </div>
+        <!-- discounts if available -->
+        <div>
+            <h3>Discounts</h3>
+            <label for="noDiscounts">None</label>
+            <input type="radio" name="discountsRadio" id="noDiscounts" checked>
+            <label for="aaaOrSeniorDiscount">AAA/Senior(10%)</label>
+            <input type="radio" name="discountsRadio" id="aaaOrSeniorDiscount">
+            <label for="militaryDiscounts">Military(20%)</label>
+            <input type="radio" name="discountsRadio" id="militaryDiscounts">
+
+        </div>
+        <!-- submit button -->
+        <button id="submit">Estimate stay cost</button>
+        
+    </form>
+    <div id="results"></div>
+</section>
+
+    <script src="scripts/overnightStay.js"></script>
+</body>
+</html>

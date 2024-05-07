@@ -69,36 +69,40 @@ function dateConverter(event) {
     console.log(`Total number of guests:${totalNumberOfGuests}`);
     // if statements to check total number of guests and if it exceeds max for rooms and if it does it outputs "The room you selected will not hold your party"
     if (onform.queenBed.checked) {
-        
-      maxGuests.innerHTML = "";
+      maxGuests.style.display= "none";
+      results.style.display= "block";
 
       roomType = "Queen";
       if (totalNumberOfGuests > 5) {
+        results.style.display= "none";
         maxGuests.innerHTML = "The room you selected will not hold your party";
-        results.innerHTML = "";
+        maxGuests.style.display= "block";
         return maxGuests, results;
       }
     }
 
     if (onform.kingBed.checked) {
-      maxGuests.innerHTML = "";
-
+      maxGuests.style.display= "none";
+      results.style.display= "block";
       roomType = "King";
       if (totalNumberOfGuests > 2) {
-        results.innerHTML = "";
+        results.style.display= "none";
         maxGuests.innerHTML = "The room you selected will not hold your party";
-
+        maxGuests.style.display= "block";
         return results, maxGuests;
       }
+      
     }
     if (onform.twoBedroom.checked) {
-      maxGuests.innerHTML = "";
+      maxGuests.style.display= "none";
+      results.style.display= "block";
 
       roomType = "2-Bedroom Suit";
 
       if (totalNumberOfGuests > 6) {
+        results.style.display= "none";
         maxGuests.innerHTML = "The room you selected will not hold your party";
-        results.innerHTML = "";
+        maxGuests.style.display= "block";
         return maxGuests, results;
       }
     }
@@ -125,7 +129,7 @@ function dateConverter(event) {
     message = `
    
     <div>The room type is: ${roomType}</div>
-    <div>The room type cost: $${Number(getRoomRate())}</div>
+    <div>The original room cost $${Number(getRoomRate())}</div>
     <div>The price per night: $${totalPricePerNightAndMonth.toFixed(2)}</div>
     <div>The total price of room type and per night: $${(
       totalPricePerNightAndMonth + Number(getRoomRate())
@@ -144,7 +148,7 @@ function dateConverter(event) {
     message = `
    
     <div>The room type is: ${roomType}</div>
-    <div>The room type cost: $${Number(getRoomRate())}</div>
+    <div>The original room cost $${Number(getRoomRate())}</div>
     <div>The price per night: $${totalPricePerNightAndMonth.toFixed(2)}</div>
     <div>The total price of room type and per night: $${(
       totalPricePerNightAndMonth + Number(getRoomRate())
@@ -165,7 +169,7 @@ function dateConverter(event) {
     message = `
    
     <div>The room type is: ${roomType}</div>
-    <div>The room type cost: $${Number(getRoomRate())}</div>
+    <div>The original room cost $${Number(getRoomRate())}</div>
     <div>The price per night: $${totalPricePerNightAndMonth.toFixed(2)}</div>
     <div>The total price of room type and per night: $${(
       totalPricePerNightAndMonth + Number(getRoomRate())

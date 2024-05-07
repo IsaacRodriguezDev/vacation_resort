@@ -30,7 +30,7 @@ function dateConverter(event) {
   let totalNumberOfChildren;
   let totalNumberOfGuests;
   let totalPriceForStay;
-
+  let discountedRoomPrice
   // created variable to check for users number of nights
   let nightsPastCheckInDate = onform.numberOfNights.value;
 
@@ -121,67 +121,49 @@ function dateConverter(event) {
   //  if statements for discounts that are applied
   if (onform.noDiscounts.checked) {
     taxDiscount = 0 / 100;
-    let discountedRoomPrice =
+    discountedRoomPrice =
       totalPricePerNightAndMonth - totalPricePerNightAndMonth * taxDiscount;
     taxDiscount = 0;
     totalPriceForStay = (discountedRoomPrice + Number(getRoomRate())) * 1.12;
-    // instanciated message for the output result
-    message = `
-   
-    <div>The room type is: ${roomType}</div>
-    <div>The original room cost $${Number(getRoomRate()).toFixed(2)}</div>
-    <div>The price per night: $${totalPricePerNightAndMonth.toFixed(2)}</div>
-    <div>The total price of room type and per night: $${(
-      totalPricePerNightAndMonth + Number(getRoomRate())
-    ).toFixed(2)}</div>
-    <div>The discounts is: ${taxDiscount}%</div>
-    <div>The discounted room cost is: $${discountedRoomPrice.toFixed(2)}</div>
-    <div>The tax is: ${baseTax * 100}%</div>
-    <div> the total price of the stay: $${totalPriceForStay.toFixed(2)}</div>`;
+  
   }
   if (onform.aaaOrSeniorDiscount.checked) {
     taxDiscount = 10 / 100;
-    let discountedRoomPrice =
+    discountedRoomPrice =
       totalPricePerNightAndMonth - totalPricePerNightAndMonth * taxDiscount;
     taxDiscount = 10;
     totalPriceForStay = (discountedRoomPrice + Number(getRoomRate())) * 1.12;
-    message = `
    
-    <div>The room type is: ${roomType}</div>
-    <div>The original room cost $${Number(getRoomRate()).toFixed(2)}</div>
-    <div>The price per night: $${totalPricePerNightAndMonth.toFixed(2)}</div>
-    <div>The total price of room type and per night: $${(
-      totalPricePerNightAndMonth + Number(getRoomRate())
-    ).toFixed(2)}</div>
-    <div>The discounts is: ${taxDiscount}%</div>
-    <div>The discounted room cost is: $${discountedRoomPrice.toFixed(2)}</div>
-    <div>The tax is: ${baseTax * 100}%</div>
-    <div> the total price of the stay: $${totalPriceForStay.toFixed(2)}</div>`;
   }
   if (onform.militaryDiscounts.checked) {
     taxDiscount = 20 / 100;
-    let discountedRoomPrice =
+     discountedRoomPrice =
       totalPricePerNightAndMonth - totalPricePerNightAndMonth * taxDiscount;
 
     taxDiscount = 20;
 
     totalPriceForStay = (discountedRoomPrice + Number(getRoomRate())) * 1.12;
-    message = `
    
-    <div>The room type is: ${roomType}</div>
-    <div>The original room cost $${Number(getRoomRate()).toFixed(2)}</div>
-    <div>The price per night: $${totalPricePerNightAndMonth.toFixed(2)}</div>
-    <div>The total price of room type and per night: $${(
-      totalPricePerNightAndMonth + Number(getRoomRate())
-    ).toFixed(2)}</div>
-    <div>The discounts is: ${taxDiscount}%</div>
-    <div>The discounted room cost is: $${discountedRoomPrice.toFixed(2)}</div>
-    <div>The tax is: ${baseTax * 100}%</div>
-    <div> the total price of the stay: $${totalPriceForStay.toFixed(2)}</div>`;
   }
+  // instanciated message for the output result
+  message = `
+   
+  <div>The room type is: ${roomType}</div>
+  <div>The original room cost $${Number(getRoomRate()).toFixed(2)}</div>
+  <div>The price per night: $${totalPricePerNightAndMonth.toFixed(2)}</div>
+  <div>The total price of room type and per night: $${(
+    totalPricePerNightAndMonth + Number(getRoomRate())
+  ).toFixed(2)}</div>
+  <div>The discounts is: ${taxDiscount}%</div>
+  <div>The discounted room cost is: $${discountedRoomPrice.toFixed(2)}</div>
+  <div>The tax is: ${baseTax * 100}%</div>
+  <div> the total price of the stay: $${totalPriceForStay.toFixed(2)}</div>`;
+
 
   // outputs the messages and total amount of everything
   results.innerHTML = message;
+
+  
   //   returned getRoomRate so if user puts more guests that are more than max then it will output maxGuests and remove calculations
   return getRoomRate();
 }

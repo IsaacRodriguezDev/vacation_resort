@@ -129,7 +129,7 @@ function dateConverter(event) {
     message = `
    
     <div>The room type is: ${roomType}</div>
-    <div>The original room cost $${Number(getRoomRate())}</div>
+    <div>The original room cost $${Number(getRoomRate()).toFixed(2)}</div>
     <div>The price per night: $${totalPricePerNightAndMonth.toFixed(2)}</div>
     <div>The total price of room type and per night: $${(
       totalPricePerNightAndMonth + Number(getRoomRate())
@@ -148,7 +148,7 @@ function dateConverter(event) {
     message = `
    
     <div>The room type is: ${roomType}</div>
-    <div>The original room cost $${Number(getRoomRate())}</div>
+    <div>The original room cost $${Number(getRoomRate()).toFixed(2)}</div>
     <div>The price per night: $${totalPricePerNightAndMonth.toFixed(2)}</div>
     <div>The total price of room type and per night: $${(
       totalPricePerNightAndMonth + Number(getRoomRate())
@@ -169,7 +169,7 @@ function dateConverter(event) {
     message = `
    
     <div>The room type is: ${roomType}</div>
-    <div>The original room cost $${Number(getRoomRate())}</div>
+    <div>The original room cost $${Number(getRoomRate()).toFixed(2)}</div>
     <div>The price per night: $${totalPricePerNightAndMonth.toFixed(2)}</div>
     <div>The total price of room type and per night: $${(
       totalPricePerNightAndMonth + Number(getRoomRate())

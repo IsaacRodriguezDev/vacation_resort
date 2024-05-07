@@ -6,7 +6,8 @@
     <title>Dining</title>
      <!-- adding Bootstrap -->
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
+<!-- including dining.css -->
+<link rel="stylesheet" href="/css/dining.css">
 </head>
 <body>
     
@@ -33,11 +34,58 @@
           </div>
         
       </nav>
-
+      <header>
+        <h1>Dining</h1>
+      </header>
+<section>
+  <form id="onForm">
+    <div>
+      <input type="radio" name="diningRadio" id="payAsYouGo" >
+      <label for="payAsYouGo">Pay as you go</label>
+      <input type="radio" name="diningRadio" id="allInclusive">
+      <label for="allInclusive">All-inclusive</label>
+    </div>
+    <div id="payAsYouGoRestaurants" >
+      <ul >
+        <b>Restaurant1</b>
+      <li>4.5 stars <b>*Rating*</b></li>
+      <li>Very Healthy</li>
+      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem architecto ipsam quo iste nihil eligendi quaerat corporis non sunt placeat similique dolore reprehenderit laborum perspiciatis quam necessitatibus voluptas, sit doloremque!</li>
+    </ul>
+    <img src="images/casey-lee-awj7sRviVXo-unsplash.jpg"  alt="An image of salmon">
+    <img src="images/edward-franklin-Nb_Q-M3Cdzg-unsplash.jpg"  alt="An image of a burger">
+    </div>
+    <div id="allInclusiveChart" >
+    <table>
+      <thead>
+          <th>Plan</th>
+          <th>Adult</th>
+          <th>Child</th>
+      </thead>
+        
+     
+      <tr>
+        <th>Basic</th>
+        <th>$62.50/day</th>
+        <th>$49.99/day</th>
+      </tr>
+      <tr>
+        <th>Premium (incl drinks)</th>
+        <th>$80.00/day</th>
+        <th>$49.99/day</th>
+      </tr>
+    </table>
+    <p><b>*The all-inclusive option can be added to your reservation at check-in*</b></p>
+    </div>
+    <button id="results">Submit</button>
+  </form>
+  <div id="payAsYouGoResults"></div>
+  <div id="allInclusiveResults"></div>
+</section>
 
 <!-- included js Bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
  
-    <script src="scripts/index.js"></script>
+    <script src="scripts/dining.js"></script>
 </body>
 </html>
